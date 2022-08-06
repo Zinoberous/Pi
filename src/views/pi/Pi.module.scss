@@ -1,0 +1,102 @@
+$numpad-button-height: 50px;
+$numpad-button-width: 100px;
+$numpad-button-margin: 2.5px;
+$pi-input-height: $numpad-button-height;
+$pi-input-width: 3 * $numpad-button-width;
+$base-font-size: 20px;
+
+.pi {
+  padding: 50px;
+  padding-top: 30px;
+  border: 5px solid white;
+  border-radius: 70px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: fit-content;
+  width: fit-content;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      font-size: 32px;
+      font-weight: bold;
+  
+      span {
+        vertical-align: super;
+        font-size: 20px;
+        font-weight: 100;
+      }
+    }
+
+    img {
+      position: relative;
+      top: -30px;
+      right: -50px;
+      height: 130px
+    }
+  }
+
+  .score {
+    font-size: 14px;
+    position: relative;
+    bottom: -20px;
+    left: 7.5px;
+  }
+
+  .value {
+    margin: $numpad-button-margin;
+    padding: 5px;
+    width: $pi-input-width;
+    height: $pi-input-height - 10; // -10 = padding
+    line-height: $pi-input-height;
+    vertical-align: middle;
+    text-align: end;
+    font-size: $base-font-size;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    overflow: hidden;
+
+    span {
+      float: right;
+    }
+  }
+
+  .numpad {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    button {
+      margin: $numpad-button-margin;
+      height: $numpad-button-height;
+      width: $numpad-button-width;
+      font-size: $base-font-size;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+
+    button:nth-child(10) {
+      grid-column: 1 / span 2;
+      width: unset;
+    }
+
+    button:nth-child(11) {
+      text-align: center;
+  
+      img {
+        cursor: pointer;
+        height: 45px;
+      }
+    }
+  }
+}
+
+// .modal {
+//   display: block;
+// }

@@ -1,0 +1,78 @@
+.dialog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position:fixed;
+  z-index: 1000;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background-color: rgba(0,0,0,0.3);
+
+  .modal {
+    max-width: 80%;
+    max-height: 80%;
+    font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+    display: block;
+    background-color: #fff;
+    border: 1px solid black;
+    border-radius: 5px;
+    animation: showDialog .3s;
+
+    .modalHeader {
+      padding: 5px;
+      border-bottom: 1px solid black;
+
+      .modalTitle {
+        font-size: xx-large;
+        font-weight: bold;
+      }
+    }
+
+    .modalBody {
+      padding: 5px;
+      text-align: center;
+      vertical-align: middle;
+      font-size: large;
+      white-space: pre-wrap;
+      word-break: break-word;
+      overflow: auto;
+    }
+
+    .modalFooter {
+      padding: 5px;
+      border-top: 1px solid black;
+      display: flex;
+      justify-content: space-between;
+
+      div:nth-child(1) {
+        justify-content: start;
+      }
+
+      div:nth-child(2) {
+        justify-content: center;
+      }
+
+      div:nth-child(3) {
+        justify-content: end;
+      }
+
+      button {
+        cursor: pointer;
+        height: 35px;
+        margin: 0px 2.5px;
+      }
+    }
+  }
+
+  @keyframes showDialog{
+    0% {
+      transform: scale(0.7);
+    }
+    
+    100% {
+      transform: scale(1);
+    }
+  }
+}
